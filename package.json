@@ -1,0 +1,46 @@
+{
+  "name": "@badlieutenant/sales-proposal-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for sales proposal analysis using company call transcripts",
+  "type": "module",
+  "bin": {
+    "sales-proposal-mcp": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "src/",
+    "README.md",
+    "CLAUDE_SETUP.md"
+  ],
+  "scripts": {
+    "start": "node bin/cli.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^0.5.0",
+    "node-fetch": "^3.3.2",
+    "zod": "^3.22.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "mcp",
+    "claude",
+    "sales",
+    "ai",
+    "gong",
+    "proposals",
+    "meddic"
+  ],
+  "author": "Max Paulus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxpaulus/bad_lieutenant.git",
+    "directory": "mcp-server"
+  },
+  "homepage": "https://github.com/maxpaulus/bad_lieutenant/tree/main/mcp-server",
+  "bugs": {
+    "url": "https://github.com/maxpaulus/bad_lieutenant/issues"
+  }
+} 
