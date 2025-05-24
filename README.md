@@ -1,22 +1,24 @@
-# Sales Proposal Agent MCP Server
+# Sales Proposal MCP Server
 
 An MCP (Model Context Protocol) server that integrates with Claude Desktop to analyze company call transcripts and generate comprehensive sales proposals with MEDDIC evaluations.
 
+This standalone MCP server connects to the [Bad Lieutenant backend service](https://github.com/MaPa07/bad_lieutenant) to provide sales intelligence capabilities directly within Claude Desktop.
+
 ## Installation
 
-### Install from Source (Recommended for Internal Use)
+### Install from Source (Recommended)
 
 Clone the repository and install the MCP server globally:
 
 ```bash
-git clone https://github.com/maxpaulus/bad_lieutenant.git
-cd bad_lieutenant/mcp-server
+git clone https://github.com/MaPa07/sales-proposal-mcp.git
+cd sales-proposal-mcp
 npm install -g .
 ```
 
-### NPM Package (Optional)
+### NPM Package (Coming Soon)
 
-If published to npm, you can also install directly:
+Once published to npm, you can install directly:
 
 ```bash
 npm install -g @badlieutenant/sales-proposal-mcp
@@ -97,7 +99,7 @@ This MCP server requires an access token to control usage and costs. The token s
 
 ### Backend URL
 
-The server connects to a Firebase Function backend. You can customize the backend URL with an environment variable:
+The server connects to the [Bad Lieutenant Firebase backend](https://github.com/MaPa07/bad_lieutenant). You can customize the backend URL with an environment variable:
 
 ```bash
 export BACKEND_URL=https://your-custom-backend.com/analyzeCompanyCalls
@@ -109,8 +111,8 @@ export BACKEND_URL=https://your-custom-backend.com/analyzeCompanyCalls
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/maxpaulus/bad_lieutenant.git
-cd bad_lieutenant/mcp-server
+git clone https://github.com/MaPa07/sales-proposal-mcp.git
+cd sales-proposal-mcp
 ```
 
 2. Install dependencies:
@@ -144,7 +146,7 @@ npm start
 ## Requirements
 
 - Node.js 18 or higher
-- Access to company call data via the backend service
+- Access to company call data via the [Bad Lieutenant backend service](https://github.com/MaPa07/bad_lieutenant)
 
 ## Error Handling
 
@@ -155,6 +157,10 @@ The server gracefully handles:
 - Invalid domain formats
 
 All errors include descriptive messages to help users understand what went wrong.
+
+## Related Repositories
+
+- [Bad Lieutenant Backend](https://github.com/MaPa07/bad_lieutenant) - The Firebase Functions backend that powers this MCP server
 
 ## Contributing
 
@@ -170,4 +176,4 @@ MIT
 
 ## Support
 
-For issues and questions, please open an issue on the [GitHub repository](https://github.com/maxpaulus/bad_lieutenant/issues). 
+For issues and questions, please open an issue on the [GitHub repository](https://github.com/MaPa07/sales-proposal-mcp/issues). 

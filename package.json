@@ -37,11 +37,10 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/maxpaulus/bad_lieutenant.git",
-    "directory": "mcp-server"
+    "url": "https://github.com/MaPa07/sales-proposal-mcp.git"
   },
-  "homepage": "https://github.com/maxpaulus/bad_lieutenant/tree/main/mcp-server",
+  "homepage": "https://github.com/MaPa07/sales-proposal-mcp",
   "bugs": {
-    "url": "https://github.com/maxpaulus/bad_lieutenant/issues"
+    "url": "https://github.com/MaPa07/sales-proposal-mcp/issues"
   }
 } 
