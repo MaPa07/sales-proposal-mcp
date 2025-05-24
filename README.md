@@ -9,8 +9,8 @@ An MCP (Model Context Protocol) server that integrates with Claude Desktop to an
 Clone the repository and install the MCP server globally:
 
 ```bash
-git clone https://github.com/maxpaulus/bad_lieutenant.git
-cd bad_lieutenant/mcp-server
+git clone <repository-url>
+cd mcp-server
 npm install -g .
 ```
 
@@ -44,6 +44,36 @@ After installation, add the server to your Claude Desktop configuration:
 
 **Important**: Replace `"your-access-token-here"` with the actual access token shared via 1Password. The server will not function without a valid access token.
 
+## Claude Project Setup (Recommended)
+
+After installing the MCP server, create a new Claude project with the following custom instructions for optimal proposal generation:
+
+```
+This Project is designed to generate customer proposals. Each chat will be for a different company. 
+
+Whenever someone requests a proposal to be created for a company (domain), don't go out and create a generic proposal. 
+
+Instead, always ping the proposal MCP with the company domain. This will take 60-120 seconds and you will get a response.
+
+The response will have 2 parts.
+
+- the actual proposal and discovery
+The key here is the Current state and Desired state sections in bulleted lists that have as much details / metrics as we find in the initial transcripts
+We don't need timelines or a generic summary of what the company does. Keep in mind that the proposal should ultimately be shared with the customer and doesn't need to contain information that's already obvious to the customer such as what industry they are in.
+When providing key stakeholders make sure to clearly separate stakeholders identified at the company vs. at MadKudu
+
+
+- a rating for the proposal and a rating including feedback for the seller.
+Make sure this stays actionable. Concise lists of gaps and action items should stand out.
+
+
+When you get the response, create 2 artifacts, one for each section.
+Make sure to keep the summaries concise, metric focused and not too verbose. Bulleted lists are a great format. 
+
+
+The user can ask follow up questions and ask about modifications.
+```
+
 ## Usage
 
 Once configured, restart Claude Desktop and you can ask Claude to analyze company calls:
@@ -52,7 +82,7 @@ Once configured, restart Claude Desktop and you can ask Claude to analyze compan
 - "Generate a sales proposal for abtasty.com focusing on enterprise features"  
 - "Analyze monday.com and provide MEDDIC evaluation"
 
-The analysis typically takes 60-90 seconds to complete.
+The analysis typically takes 60-120 seconds to complete.
 
 ## Features
 
@@ -95,79 +125,21 @@ This MCP server requires an access token to control usage and costs. The token s
 - Added to your Claude Desktop configuration as shown above
 - Kept secure and not committed to version control
 
-### Backend URL
-
-The server connects to a Firebase Function backend. You can customize the backend URL with an environment variable:
-
-```bash
-export BACKEND_URL=https://your-custom-backend.com/analyzeCompanyCalls
-```
-
-## Development
-
-### Local Development
-
-1. Clone the repository:
-```bash
-git clone https://github.com/maxpaulus/bad_lieutenant.git
-cd bad_lieutenant/mcp-server
-```
-
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Test the server:
-```bash
-npm test
-```
-
-4. Run locally:
-```bash
-npm start
-```
-
-### Project Structure
-
-```
-├── bin/
-│   └── cli.js          # CLI entry point
-├── src/
-│   └── server.js       # Main server logic
-├── test/
-│   └── test-connection.js
-├── package.json
-└── README.md
-```
-
 ## Requirements
 
 - Node.js 18 or higher
-- Access to company call data via the backend service
+- Valid access token for the service
 
 ## Error Handling
 
 The server gracefully handles:
 - Domain not found errors
-- Backend service timeouts
+- Service timeouts
 - Network connectivity issues
 - Invalid domain formats
 
 All errors include descriptive messages to help users understand what went wrong.
 
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests if applicable
-5. Submit a pull request
-
 ## License
 
-MIT
-
-## Support
-
-For issues and questions, please open an issue on the [GitHub repository](https://github.com/maxpaulus/bad_lieutenant/issues). 
+MIT 
