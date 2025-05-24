@@ -1,22 +1,22 @@
-# Sales Proposal Agent MCP Server
+# Sales Proposal MCP Server
 
 An MCP (Model Context Protocol) server that integrates with Claude Desktop to analyze company call transcripts and generate comprehensive sales proposals with MEDDIC evaluations.
 
 ## Installation
 
-### Install from Source (Recommended for Internal Use)
+### Install from Source (Recommended)
 
 Clone the repository and install the MCP server globally:
 
 ```bash
-git clone <repository-url>
-cd mcp-server
+git clone https://github.com/MaPa07/sales-proposal-mcp.git
+cd sales-proposal-mcp
 npm install -g .
 ```
 
-### NPM Package (Optional)
+### NPM Package (Coming Soon)
 
-If published to npm, you can also install directly:
+Once published to npm, you can install directly:
 
 ```bash
 npm install -g @badlieutenant/sales-proposal-mcp
@@ -142,4 +142,4 @@ All errors include descriptive messages to help users understand what went wrong
 
 ## License
 
-MIT 
+MIT
